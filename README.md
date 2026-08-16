@@ -10,6 +10,20 @@
 
 ---
 
+## 📸 System Previews
+
+<div align="center">
+  <img src="assets/du_os_dashboard.png" alt="Digital University OS Dashboard" width="800" style="border-radius: 8px; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); margin-bottom: 20px;" />
+  <br/>
+  <br/>
+  <img src="assets/du_os_ai_tutor.png" alt="RAG AI Tutor Interface" width="800" style="border-radius: 8px; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); margin-bottom: 20px;" />
+  <br/>
+  <br/>
+  <img src="assets/du_os_placement.png" alt="Placement Intelligence Engine" width="800" style="border-radius: 8px; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); margin-bottom: 20px;" />
+</div>
+
+---
+
 ## 🏛 Project Architecture & Common University Data Layer
 
 Unlike legacy isolated college management tools or basic CRUD portals, **Digital University OS** interlinks all 8 major university domains through a **Common Data Layer** and a live **University Intelligence Graph**.
