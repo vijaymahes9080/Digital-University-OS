@@ -1,0 +1,42 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Digital University OS API Specification",
+    "description": "RESTful and Vector RAG API Gateway specifications for AI-Powered Integrated University Operating System.",
+    "version": "2.0.0"
+  },
+  "paths": {
+    "/api/v1/auth/login": {
+      "post": {
+        "summary": "Authenticate user role with biometric MFA token",
+        "responses": {
+          "200": { "description": "JWT session token and user profile" }
+        }
+      }
+    },
+    "/api/v1/rag/query": {
+      "post": {
+        "summary": "Execute vector similarity search across indexed university corpus",
+        "responses": {
+          "200": { "description": "Top-K matched document chunks with citations and confidence score" }
+        }
+      }
+    },
+    "/api/v1/attendance/forecast": {
+      "post": {
+        "summary": "Monte Carlo forecast simulation for student end-semester eligibility",
+        "responses": {
+          "200": { "description": "Forecasted attendance percentage and Regulation 4.2 risk status" }
+        }
+      }
+    },
+    "/api/v1/placement/skill-gap": {
+      "get": {
+        "summary": "Fetch career readiness radar and target job role match matrices",
+        "responses": {
+          "200": { "description": "Skill radar gap analysis and recommended capstone modules" }
+        }
+      }
+    }
+  }
+}

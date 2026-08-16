@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { UniversityProvider, useUniversity } from './context/UniversityContext';
 import { Navbar } from './components/layout/Navbar';
 import { Sidebar } from './components/layout/Sidebar';
 import { DemoFlowBar } from './components/layout/DemoFlowBar';
 import { IntelligenceGraphModal } from './components/common/IntelligenceGraphModal';
+import { CommandPaletteModal } from './components/common/CommandPaletteModal';
 import { StudentDashboard } from './modules/student/StudentDashboard';
 import { FacultyDashboard } from './modules/faculty/FacultyDashboard';
 import { AITutorModule } from './modules/ai_tutor/AITutorModule';
@@ -16,6 +17,13 @@ import { ProfileView } from './modules/identity/ProfileView';
 
 const AppContent = () => {
   const { activeTab, activeRole, isGraphModalOpen, setIsGraphModalOpen } = useUniversity();
+  const [isCommandPaletteOpen, setIsCommandPaletteOpen] = useState(false);
+
+  useEffect(() => {
+    const handleOpenPalette = () => setIsCommandPaletteOpen(true);
+    window.addEventListener('open-command-palette', handleOpenPalette);
+    return () => window.removeEventListener('open-command-palette', handleOpenPalette);
+  }, []);
 
   const renderModule = () => {
     switch (activeTab) {
@@ -59,10 +67,15 @@ const AppContent = () => {
         </main>
       </div>
 
-      {/* University Intelligence Graph Modal */}
+      {/* Modals */}
       <IntelligenceGraphModal
         isOpen={isGraphModalOpen}
         onClose={() => setIsGraphModalOpen(false)}
+      />
+
+      <CommandPaletteModal
+        isOpen={isCommandPaletteOpen}
+        onClose={() => setIsCommandPaletteOpen(false)}
       />
     </div>
   );
